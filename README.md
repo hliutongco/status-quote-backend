@@ -1,8 +1,3 @@
-This is a basic sample of how to do video streaming using Node.js and HTML5
+# Status Quote Backend
 
-# Install
-
-- git clone
-- npm install
-- npm start
-- open browser in `localhost:3000`
+Backend for the Status Quote game. Mainly for hosting the videos and a simple database for the scores.

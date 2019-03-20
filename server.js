@@ -5,10 +5,6 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-// app.get('/', function(req, res) {
-//   res.sendFile(path.join(__dirname + '/index.htm'))
-// })
-
 function helper(req, res, path){
   const stat = fs.statSync(path)
   const fileSize = stat.size
