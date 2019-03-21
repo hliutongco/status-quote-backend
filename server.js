@@ -2,8 +2,26 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path')
 const app = express()
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+const http = require('http')
+const Score = require('./api/models/scoreModel')
 
 app.use(express.static(path.join(__dirname, 'public')))
+
+const server = http.createServer(app)
+
+// mongoose instance url connection
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/myapp');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+const scoreRoutes = require('./api/routes/scoreRoutes'); //importing route
+scoreRoutes(app); //register the route
+
+// Below is the video hosting code
 
 function helper(req, res, path){
   const stat = fs.statSync(path)
@@ -58,6 +76,6 @@ app.get('/clip4', function(req, res) {
   helper(req, res, path)
 })
 
-app.listen(3000, function () {
+server.listen(3000, function () {
   console.log('Listening on port 3000!')
 })
