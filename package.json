@@ -1,7 +1,7 @@
 {
-  "name": "video-stream-sample",
+  "name": "status-quote-backend",
   "version": "1.0.0",
-  "description": "Streaming video example",
+  "description": "backend server for the status quote game",
   "main": "server.js",
   "engines": {
     "node": ">=6.2.0"
@@ -9,9 +9,14 @@
   "scripts": {
     "start": "nodemon server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hliutongco/status-quote-backend.git"
+  },
   "author": "daspinola",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.15.3",
     "mongoose": "^5.1.4",
     "nodemon": "^1.11.0"

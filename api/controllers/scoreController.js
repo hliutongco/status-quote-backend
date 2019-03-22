@@ -13,6 +13,7 @@ const mongoose = require('mongoose'),
   }
 
   exports.create_score = function(req, res){
+    
     const new_score = new Score(req.body);
     new_score.save(function(err, score){
       if(err){

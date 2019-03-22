@@ -7,13 +7,16 @@ const bodyParser = require('body-parser')
 const http = require('http')
 const Score = require('./api/models/scoreModel')
 
+const cors = require('cors');
+app.use(cors({ credentials: true, origin:true }));
+
 app.use(express.static(path.join(__dirname, 'public')))
 
 const server = http.createServer(app)
 
 // mongoose instance url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/myapp');
+mongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
