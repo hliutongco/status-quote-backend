@@ -16,7 +16,7 @@ const server = http.createServer(app)
 
 // mongoose instance url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/statusquote', { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -65,17 +65,47 @@ app.get('/clip1', function(req, res) {
 })
 
 app.get('/clip2', function(req, res) {
-  const path = 'assets/roads-min.mp4'
+  const path = 'assets/jaws.mp4'
   helper(req, res, path)
 })
 
 app.get('/clip3', function(req, res) {
-  const path = 'assets/the-truth-min.mp4'
+  const path = 'assets/roads-min.mp4'
   helper(req, res, path)
 })
 
 app.get('/clip4', function(req, res) {
+  const path = 'assets/terminator.mp4'
+  helper(req, res, path)
+})
+
+app.get('/clip5', function(req, res) {
+  const path = 'assets/the-truth-min.mp4'
+  helper(req, res, path)
+})
+
+app.get('/clip6', function(req, res) {
+  const path = 'assets/wizard-of-oz.mp4'
+  helper(req, res, path)
+})
+
+app.get('/clip7', function(req, res) {
   const path = 'assets/yoda-min.mp4'
+  helper(req, res, path)
+})
+
+app.get('/clip8', function(req, res) {
+  const path = 'assets/planet-of-the-apes.mp4'
+  helper(req, res, path)
+})
+
+app.get('/clip9', function(req, res) {
+  const path = 'assets/apollo-13.mp4'
+  helper(req, res, path)
+})
+
+app.get('/clip10', function(req, res) {
+  const path = 'assets/lotr.mp4'
   helper(req, res, path)
 })
 

@@ -5,15 +5,12 @@ const mongoose = require('mongoose'),
 
   exports.get_scores = function(req, res){
     Score.find({}, function(err, score){
-      if(err){
-        res.send(err)
-      }
       res.json(score)
-    })
+    }).sort('-score').limit(10)
   }
 
   exports.create_score = function(req, res){
-    
+
     const new_score = new Score(req.body);
     new_score.save(function(err, score){
       if(err){
@@ -21,4 +18,5 @@ const mongoose = require('mongoose'),
       }
       res.json(score)
     })
+
   }

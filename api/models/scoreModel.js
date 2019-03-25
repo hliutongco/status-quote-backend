@@ -14,6 +14,4 @@ const ScoreSchema = new Schema({
   }
 })
 
-const Score = mongoose.model('Scores', ScoreSchema)
-
-module.exports = Score.find().limit(10)
+module.exports = mongoose.model('Scores', ScoreSchema)
