@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/hliutongco/status-quote-backend.git"
   },
-  "author": "daspinola",
+  "author": "helen",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.4",
