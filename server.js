@@ -16,7 +16,8 @@ const server = http.createServer(app)
 
 // mongoose instance url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/statusquote', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://hliutongco:@Silencer3@cluster0-hxpkm.gcp.mongodb.net/test?retryWrites=true', { useNewUrlParser: true });
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
