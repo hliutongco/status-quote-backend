@@ -16,7 +16,7 @@ const server = http.createServer(app)
 
 // mongoose instance url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://hliutongco:@Silencer3@cluster0-hxpkm.gcp.mongodb.net/test?retryWrites=true', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://hliutongco:%40Silencer3@cluster0-hxpkm.gcp.mongodb.net/test?retryWrites=true', { useNewUrlParser: true });
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
